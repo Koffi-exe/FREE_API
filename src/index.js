@@ -27,7 +27,7 @@ app.post('/mens', async (req, res) => {
 
 app.get('/mens', async (req, res) => {
     try {
-        const result = await MensRanking.find({});
+        const result = await MensRanking.find({}).sort({ranking:1});
         res.send(result);
     } catch (e) {
         res.status(400).send(e)
