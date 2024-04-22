@@ -8,6 +8,10 @@ const port = process.env.PORT || 3000;
 const app = express();
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.send("Message from /")
+})
+
 app.post('/mens', async (req, res) => {
     try {
         const rank = new MensRanking(req.body)
@@ -53,9 +57,6 @@ app.patch('/mens/:id', async (req, res) => {
     }
 })
 
-app.get('/', (req, res) => {
-    res.send("Message from /")
-})
 
 
 app.listen(port, () => {
