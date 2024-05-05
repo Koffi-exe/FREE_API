@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 app.use(express.json())
 
+app.get('/', (req, res)=>res.send("This is the Merged adithya api"))
 
 app.use('/race', raceRouter)
 
