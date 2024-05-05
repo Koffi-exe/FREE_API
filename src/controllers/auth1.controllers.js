@@ -4,7 +4,7 @@ const auth1_register = async(req, res)=>{
     const {email, fullname, password}= req.body
 
     try {
-        const user = await User.create({email:email, name:fullname, password:password})
+        const user = await User.create({email:email, name:name, password:password})
         res.status(200).json({message:"User created successfully"})
     } catch (error) {
         res.status(400).json({error:error.message})
