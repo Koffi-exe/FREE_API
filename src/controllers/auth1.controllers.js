@@ -1,7 +1,7 @@
 import { User } from "../models/auth1.models.js"
 
 const auth1_register = async(req, res)=>{
-    const {email, fullname, password}= req.body
+    const {email, name, password}= req.body
 
     try {
         const user = await User.create({email:email, name:name, password:password})
